@@ -23,3 +23,11 @@ print('Задача 2. Долги')
 # Должник с номером 10
 # Сколько должны? 2000
 # Общая сумма долга: 8000
+
+debtor = int(input('Введите количество должников: '))
+debt = 0
+for debtor_left in range(0, debtor, 5):
+  print(f'Должник с номером {debtor_left}')
+  current_debt = int(input('Сколько должны? '))
+  debt += current_debt
+print('Общая сумма долга:', debt)

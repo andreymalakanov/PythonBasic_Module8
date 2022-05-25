@@ -12,3 +12,10 @@ print('Задача 1. Космическая еда')
 # о том сколько килограммов гречки у вас должно быть в запасе через месяц, два и так далее,
 # пока она не закончится.
 # Используйте цикл for
+
+buckwheat = 100
+current_mounth = -1
+mounth_need = -4
+for buckwheat_left in range(buckwheat, -1, mounth_need):
+  current_mounth += 1
+  print(f'Прошло месяцев {current_mounth}, гречки осталось: {buckwheat_left}')

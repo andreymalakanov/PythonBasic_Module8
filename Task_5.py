@@ -27,3 +27,21 @@ print('Задача 5. Функция 2')
 # В точке 0 функция равна 1
 # В точке -1 функция равна 6
 # В точке -2 функция равна 9
+
+segment_start = int(input('Введите начало отрезка: ')) 
+segment_end = int(input('Введите конец отрезка: '))
+segment_step = int(input('Введите шаг: '))
+print('Значение функции y = x^3 + 2x^2 - 4x + 1')
+print(segment_start, segment_end)
+if segment_step < 0:
+  if segment_start < segment_end:
+    segment_start, segment_end = segment_end, segment_start
+  for x in range(segment_start, segment_end - 1, segment_step):
+    y = x**3 + 2*x**2 - 4*x + 1
+    print (f'В точке {x} функция равна {y}')
+else:
+  if segment_start > segment_end:
+    segment_start, segment_end = segment_end, segment_start
+  for x in range(segment_start, segment_end + 1, segment_step):
+    y = x**3 + 2*x**2 - 4*x + 1
+    print (f'В точке {x} функция равна {y}')
