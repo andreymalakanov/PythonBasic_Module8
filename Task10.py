@@ -37,3 +37,50 @@ print('Задача 10. Кинотеатр')
 # Введите кол-во девочек: 1
 # Ответ: Нет решения
 
+# b = ''
+# print(b)
+# b += 'h'
+# print(b)
+
+
+b = int(input('Введите колическо мальчиков: '))
+g = int(input('Введите колическо девочек: '))
+answer = ''
+
+if (b > 2 * g) or (g > 2 * b):
+  answer += 'Нет решения'
+  b = 0
+  g = 0
+else:
+  answer += 'План рассадки: '
+if b >= g:  # k - Коэффициент смены позиции
+  k = 1
+else:
+  k = -1
+for num1 in range(0, b + g):
+  if k == 1:
+    answer += 'B'
+    b -= 1
+  else:
+    answer += 'G'
+    g -= 1
+  k *= -1
+  if b == 2 * g:
+    for num2 in range(0, b + g):
+      if b >= 2 * g:
+        answer += 'B'
+        b -= 1
+      else:
+        answer += 'G'
+        g -= 1    
+    break
+  elif g == 2 * b:
+    for num2 in range(0, b + g):
+      if g >= 2 * b:
+        answer += 'G'
+        g -= 1
+      else:
+        answer += 'B'
+        b -= 1    
+    break
+print(answer)
